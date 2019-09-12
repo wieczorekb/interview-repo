@@ -1,0 +1,3 @@
+Test can be run form terminal from script location in following way:
+
+pytest -v test_AvanadeCareers.py::Test_JobOffersList

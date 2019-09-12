@@ -1,0 +1,5 @@
+{
+  "test_ava.py": true,
+  "test_ava.py::Test_JobOffersList::test_Denmark_Offers": true,
+  "test_ava2.py::Test_JobOffersList::test_Canada_Offers": true
+}
