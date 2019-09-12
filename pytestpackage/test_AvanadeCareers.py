@@ -7,6 +7,8 @@ from selenium.webdriver.support import expected_conditions as EC
 import time
 
 @pytest.mark.usefixtures("setUp")
+
+
 class Test_JobOffersList:
 
 
@@ -20,7 +22,7 @@ class Test_JobOffersList:
         BTN_SEARCH = "//button[@value='search']"
         BTN_NEXT = "//span[@class ='nextLink']"
 
-        LIST_JOB = "//div[@class='listJobs']//li[1]"
+
 
         tabCareers = self.driver.find_element(By.XPATH, TAB_CAREERS)
         tabCareersHov = ActionChains(self.driver).move_to_element(tabCareers)
@@ -31,6 +33,7 @@ class Test_JobOffersList:
         ddnRlesLocations.click()
 
         # Click on TAB_SEARCH
+        self.driver.execute_script("window.scrollBy(0, 200);")
         searchJobs = WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located((By.XPATH, TAB_SEARCH)))
         searchJobs.click()
 
@@ -77,4 +80,6 @@ class Test_JobOffersList:
         jobOffer = self.driver.find_element(By.XPATH, LNK_JOB_OFFER).is_displayed()
         assert jobOffer == True, 'No job offer is visible on the page'
 
+ff=Test_JobOffersList
+ff()
 
